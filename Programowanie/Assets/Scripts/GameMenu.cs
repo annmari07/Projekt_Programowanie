@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameMenu : MonoBehaviour
 
     private void Start()
     {
-        pauseMenu.SetActive(false);
+        ResumeGame();
 
     }
 
@@ -19,8 +20,16 @@ public class GameMenu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) == true)
            
         {
-            pauseMenu.SetActive(true);
-                
+            if(Time.timeScale == 0.0f)
+            {
+                ResumeGame();
+            }
+            else
+            
+            {
+                PauseGame();
+            }
+
         }
 
 
@@ -28,16 +37,28 @@ public class GameMenu : MonoBehaviour
     }
 
 
+    private void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    private void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
 
 
     public void OnResumeClicked()
     {
-        
+        ResumeGame();
     }
 
     
     public void OnBackToMenuClicked()
     {
-        
+        SceneManager.LoadScene("Level_02");
     }
 }
