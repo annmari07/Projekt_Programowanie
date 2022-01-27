@@ -2,33 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pause : MonoBehaviour
+public class GameMenu : MonoBehaviour
 {
 
     public GameObject pauseMenu;
 
+
     private void Start()
     {
         pauseMenu.SetActive(false);
+
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) == true)
+        if(Input.GetKeyDown(KeyCode.Escape) == true)
+           
         {
-           pauseMenu.SetActive(true);
-
+            pauseMenu.SetActive(true);
+                
         }
+
+
 
     }
 
 
-    public void OneResumeClicked()
+
+
+    public void OnResumeClicked()
     {
         
     }
 
-    public void OneMenuClicked()
+    
+    public void OnBackToMenuClicked()
     {
         
     }
