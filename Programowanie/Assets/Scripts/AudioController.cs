@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    
+    public AudioClip stepClip;
 
-
-
-    public void Step()
-    {
+    public AudioSource audioSource;
         
+
+ 
+   public void Step()
+    {
+        audioSource.PlayOneShot(stepClip);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
