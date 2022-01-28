@@ -8,8 +8,10 @@ public class SnowmanNPC : MonoBehaviour
     public GameObject questStarted;
     public GameObject questFinished;
     public PickupController pickupController;
+    public Animator doorAnimator;
     private bool isQuestFinished = false;
     private bool isPlayerNear = false;
+    
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class SnowmanNPC : MonoBehaviour
             }
             else
             {
+                doorAnimator.Play("New Animation");
                 questStarted.SetActive(false);
                 questFinished.SetActive(true);
             }
