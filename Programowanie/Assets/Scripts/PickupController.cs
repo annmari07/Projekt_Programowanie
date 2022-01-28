@@ -1,11 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
-  
-  
+
+    private int pickupFoundCount = 0;
+    private int pickupOnMapCount = 6;
+    public TextMeshProUGUI pickupCountMesh;
+
+
+    public bool GotAllPickups()
+    {
+        if(pickupFoundCount < pickupOnMapCount)
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +36,9 @@ public class PickupController : MonoBehaviour
             
             {
             pickup.OnPickupFound();
+            pickupFoundCount++;
+
+            pickupCountMesh.text = pickupFoundCount.ToString();
 
             }
 

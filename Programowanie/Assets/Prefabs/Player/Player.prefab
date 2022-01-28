@@ -1893,6 +1893,7 @@ GameObject:
   - component: {fileID: 4751153733866225244}
   - component: {fileID: 4751153733866225245}
   - component: {fileID: 4389072640748158544}
+  - component: {fileID: 6137058266550217567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2048,6 +2049,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bef36db3321a474e9e7e07872a7cd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepClip: {fileID: 0}
+  audioSource: {fileID: 0}
+--- !u!114 &6137058266550217567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751153733866225246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f051fe1d0c25a63409bbce448bffa46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupCountMesh: {fileID: 0}
 --- !u!1 &4751153733868464561
 GameObject:
   m_ObjectHideFlags: 0
